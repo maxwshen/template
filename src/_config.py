@@ -1,6 +1,10 @@
 
 
 PRJ_DIR = '/cluster/mshen/prj/.../'  
+
+toy = True
+if toy:
+  PRJ_DIR += 'toy/'
 #######################################################
 # Note: Directories should end in / always
 #######################################################
