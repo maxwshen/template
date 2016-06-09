@@ -1,8 +1,7 @@
-
-
 PRJ_DIR = '/cluster/mshen/prj/.../'  
 
 toy = True
+# toy = False
 if toy:
   PRJ_DIR += 'toy/'
 #######################################################
@@ -17,9 +16,7 @@ SRC_DIR = PRJ_DIR + 'src/'
 
 CLEAN = False       # Values = 'ask', True, False
 
-# toy = True
-toy = False
-if toy:
-  pass
-else:
-  pass
+#######################################################
+# Project-specific parameters
+#######################################################
+
