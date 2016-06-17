@@ -15,6 +15,7 @@ NAME = util.get_fn(__file__)
 
 
 
+@util.time_dec
 def main(inp_dir, out_dir, run = True):
   print NAME  
   util.ensure_dir_exists(out_dir)

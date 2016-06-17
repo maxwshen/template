@@ -1,7 +1,7 @@
 import _config
 
 # Which script are we parallelizing?
-P_SCRIPT = 'b_seq_align'
+P_SCRIPT = 'scriptname'
 
 SPLITS = 8
 

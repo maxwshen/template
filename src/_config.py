@@ -1,4 +1,5 @@
 PRJ_DIR = '/cluster/mshen/prj/.../'  
+SRC_DIR = PRJ_DIR + 'src/'
 
 toy = True
 # toy = False
@@ -10,7 +11,6 @@ if toy:
 DATA_DIR = PRJ_DIR + 'data/'
 OUT_PLACE = PRJ_DIR + 'out/'
 RESULTS_PLACE = PRJ_DIR + 'results/'
-SRC_DIR = PRJ_DIR + 'src/'
 #######################################################
 #######################################################
 
