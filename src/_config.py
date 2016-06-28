@@ -1,8 +1,8 @@
 PRJ_DIR = '/cluster/mshen/prj/.../'  
 SRC_DIR = PRJ_DIR + 'src/'
 
-toy = True
-# toy = False
+# toy = True
+toy = False
 if toy:
   PRJ_DIR += 'toy/'
 #######################################################
