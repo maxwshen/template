@@ -9,7 +9,7 @@ import a_step, b_step
 
 ##############################################################
 ##############################################################
-util.cp(_config.SRC_DIR + '_config.py', _config.RESULTS_PLACE)
+util.shell_cp(_config.SRC_DIR + '_config.py', _config.RESULTS_PLACE)
 
 start = datetime.datetime.now()
 print start

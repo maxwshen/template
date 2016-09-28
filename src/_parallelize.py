@@ -91,9 +91,18 @@ def combine_outputs(out_dir):
     locs = [s + fn for s in out_splits]
     subprocess.call('cat ' + ' '.join(locs) + ' > ' + out_dir + fn, 
       shell = True)
-
   return
 
+def split_input(inp_dir):
+  print '\tSplitting by', SPLIT_TYPE
+  if SPLIT_TYPE == 'line':
+    split_by_lines(inp_dir)
+    pass
+  elif SPLIT_TYPE == 'file':
+    split_by_files(inp_dir)
+  else:
+    print 'ERROR: Invalid split type'
+  return
 
 def main(inp_dir, out_dir, script):
   print '\tParallelizing', script, 'with', _parallel_config.SPLITS, 'splits'
@@ -101,26 +110,36 @@ def main(inp_dir, out_dir, script):
   # Make copy of the parameters used in the run
   util.cp(_config.SRC_DIR + '_parallel_config.py', out_dir)
 
+
+  RUN = False
+
   # Make split folders
-  split_folds(inp_dir)
-  split_folds(out_dir)
+  if RUN:
+    split_folds(inp_dir)
+    split_folds(out_dir)
+  else:
+    print 'Skipping folder creation'
 
   # Split the input
-  print '\tSplitting by', _parallel_config.SPLIT_TYPE
-  if _parallel_config.SPLIT_TYPE == 'line':
-    split_by_lines(inp_dir)
-    pass
-  elif _parallel_config.SPLIT_TYPE == 'file':
-    split_by_files(inp_dir)
+  if RUN:
+    split_input(inp_dir)
   else:
-    print 'ERROR: Invalid split type'
-    return
+    print 'Skipping input splitting'
+
+  RUN = True
 
   # Parallelize on split input
-  start_threads(inp_dir, out_dir, script)
+  if RUN:
+    start_threads(inp_dir, out_dir, script)
+  else:
+    print 'Skipping parallel processing'
 
-  # Combine split output into overall results
-  combine_outputs(out_dir)
+
+  # # Combine split output into overall results
+  if RUN:
+    combine_outputs(out_dir)
+  else:
+    print 'Skipping combining output'
 
   print 'Done'
   return out_dir
