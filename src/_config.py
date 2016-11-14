@@ -24,6 +24,7 @@ DATA_FOLD = 'rename_me/'
 sys.path.insert(0, DATA_DIR + DATA_FOLD)
 import _dataconfig as d
 print 'Using data folder:\n', DATA_DIR + DATA_FOLD
+DATA_DIR += DATA_FOLD
 OUT_PLACE += DATA_FOLD
 RESULTS_PLACE += DATA_FOLD
 
