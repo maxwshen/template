@@ -8,7 +8,7 @@ from mylib import util
 
 
 # Default params
-DEFAULT_INP_DIR = _config.DATA_DIR + '2016-06-06/'
+DEFAULT_INP_DIR = _config.DATA_DIR + 'rename_me/'
 NAME = util.get_fn(__file__)
 
 # Functions
