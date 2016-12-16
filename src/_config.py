@@ -1,6 +1,6 @@
 import sys
 
-PRJ_DIR = '/cluster/mshen/prj/.../'  
+PRJ_DIR = '/cluster/mshen/prj/RENAME_ME/'  
 SRC_DIR = PRJ_DIR + 'src/'
 
 # toy = True
