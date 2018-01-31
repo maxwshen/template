@@ -13,6 +13,7 @@ if toy:
 DATA_DIR = PRJ_DIR + 'data/'
 OUT_PLACE = PRJ_DIR + 'out/'
 RESULTS_PLACE = PRJ_DIR + 'results/'
+QSUBS_DIR = PRJ_DIR + 'qsubs/'
 #######################################################
 #######################################################
 
@@ -27,6 +28,7 @@ print 'Using data folder:\n', DATA_DIR + DATA_FOLD
 DATA_DIR += DATA_FOLD
 OUT_PLACE += DATA_FOLD
 RESULTS_PLACE += DATA_FOLD
+QSUBS_DIR += DATA_FOLD
 
 #######################################################
 # Project-specific parameters
