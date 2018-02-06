@@ -20,7 +20,8 @@ QSUBS_DIR = PRJ_DIR + 'qsubs/'
 CLEAN = False       # Values = 'ask', True, False
 
 # which data are we using? import that data's parameters
-DATA_FOLD = 'rename_me/'
+# DATA_FOLD = 'rename_me/'
+DATA_FOLD = ''
 
 sys.path.insert(0, DATA_DIR + DATA_FOLD)
 import _dataconfig as d
