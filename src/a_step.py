@@ -13,8 +13,10 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Default params
-DEFAULT_INP_DIR = _config.DATA_DIR
+inp_dir = _config.DATA_DIR
 NAME = util.get_fn(__file__)
+out_dir = _config.OUT_PLACE + NAME + '/'
+util.ensure_dir_exists(out_dir)
 
 ##
 # Functions
@@ -42,7 +44,7 @@ def gen_qsubs():
     num_scripts += 1
 
     # Write qsub commands
-    qsub_commands.append('qsub -M maxwshen@csail.mit.edu -m e -wd %s %s' % (_config.SRC_DIR, sh_fn))
+    qsub_commands.append('qsub -m e -wd %s %s' % (_config.SRC_DIR, sh_fn))
 
   # Save commands
   with open(qsubs_dir + '_commands.txt', 'w') as f:
@@ -55,19 +57,14 @@ def gen_qsubs():
 # Main
 ##
 @util.time_dec
-def main(inp_dir, out_dir):
+def main():
   print NAME  
-  util.ensure_dir_exists(out_dir)
-
+  
   # Function calls
 
-  return out_dir
+
+  return
 
 
 if __name__ == '__main__':
-  if len(sys.argv) > 1:
-    main(DEFAULT_INP_DIR, 
-         _config.OUT_PLACE + NAME + '/', 
-         sys.argv[1])
-  else:
-    main(DEFAULT_INP_DIR, _config.OUT_PLACE + NAME + '/')
+  main()
