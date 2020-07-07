@@ -40,7 +40,7 @@ def gen_qsubs():
     num_scripts += 1
 
     # Write qsub commands
-    qsub_commands.append(f'qsub -V -P regevlab -l h_rt=4:00:00 -wd {_config.SRC_DIR} {sh_fn} &')
+    qsub_commands.append(f'qsub -V -j y -P regevlab -l h_rt=4:00:00 -wd {_config.SRC_DIR} {sh_fn} &')
 
   # Save commands
   commands_fn = qsubs_dir + '_commands.sh'
